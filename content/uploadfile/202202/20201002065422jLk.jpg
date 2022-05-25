@@ -1,0 +1,19 @@
+<script language='javascript' type='text/javascript'>
+         var secs = 5; //倒计时的秒数
+         var URL;
+         function Load(url) {
+             URL = url;
+             for (var i = secs; i >= 0; i--) {
+                 window.setTimeout('doUpdate(' + i + ')', (secs - i) * 1000);
+             }
+         }
+         function doUpdate(num) {
+             document.getElementById('ShowDiv').innerHTML = '<h2>你浏览的内容属于盗链，正跳转回官网还有<span style="color:red">' + num + '</span>秒后自动返回首页<h2>';
+             if (num == 0) { window.location = URL; }
+         }
+    </script>
+</head>
+<body>
+    <script language="javascript" type="text/javascript">Load("http://www.hy3122.com"); //网址修改成你要跳转的默认首页</script>
+    <div id="ShowDiv"></div>
+</body
